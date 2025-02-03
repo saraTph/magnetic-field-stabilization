@@ -149,5 +149,5 @@ np.savetxt(os.path.join(location, 'StdS_fit.txt'), outStdS_fit, header=header, d
 #%% Save figures
 location = r'C:\Users\Sarah\OneDrive\Documenti\InstOptique\Data analysis\B filed stabilization\data-241118\Figures'
 
-#figStdS.savefig(os.path.join(location, 'StdS.pdf'), dpi=600)
+# figStdS.savefig(os.path.join(location, 'StdS.pdf'), dpi=600)
 
