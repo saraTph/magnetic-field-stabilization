@@ -26,7 +26,8 @@ def devStS_solved(tau,d0,sigma):
 
 #%% Import
 
-location = r'C:\Users\Sarah\OneDrive\Documenti\InstOptique\Data analysis\B filed stabilization\data-241024\Export'
+#location = r'C:\Users\Sarah\OneDrive\Documenti\InstOptique\Data analysis\B filed stabilization\data-241024\Export'
+location = r'C:\Users\sarat\OneDrive\Documenti\GitHub\PhD\magnetic-field-stabilization\data-analysis\Ramsey-data-241118\Export'
 
 file = os.path.join(location, 'RamseyAv_Points.txt')
 time, popMean, popStd = np.genfromtxt(file, delimiter='\t', 
@@ -45,9 +46,9 @@ poptMaxPoints = np.genfromtxt(file, delimiter='\t',
 
 # Parameters
 C = dampedContrast(time,*poptMaxPoints)-0.5          # contrast decay given by B field inhomogeneities
-d0 = poptRamsey[2]*(2*pi)       # middle value detuning d                     
-sigma = 150 * 2*pi                     # Standard deviation of Gaussian noise
-num_samples = 2             # Number of samples for Monte Carlo simulation
+d0 = poptRamsey[2]#*(2*pi)       # middle value detuning d                     
+sigma = 50 #* 2*pi                     # Standard deviation of Gaussian noise
+num_samples = 10             # Number of samples for Monte Carlo simulation
 
 
 # Initialize array to store results
@@ -107,7 +108,7 @@ axStdS.set_title(f'Monte Carlo simulation {num_samples} samples')
 axStdS.set_ylabel(r"std[S]", size=size)
 axStdS.set_xlabel(r"$\tau$ [ms]", size=size)
 axStdS.tick_params(axis='both', which='major', labelsize=size)
-axStdS.legend()
+#axStdS.legend()
 # add box
 param_names = [r'$\delta_0$', r'$\sigma_{\delta_0}$'] 
 fit_params_text = "\n".join([

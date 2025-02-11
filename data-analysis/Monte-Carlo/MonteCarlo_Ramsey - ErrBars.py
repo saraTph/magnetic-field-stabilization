@@ -26,7 +26,8 @@ def devStS_solved(tau,d0,sigma):
 
 #%% Import
 
-location = r'C:\Users\Sarah\OneDrive\Documenti\InstOptique\Data analysis\B filed stabilization\data-241118\Export'
+#location = r'C:\Users\Sarah\OneDrive\Documenti\InstOptique\Data analysis\B filed stabilization\data-241118\Export'
+location = r'C:\Users\sarat\OneDrive\Documenti\GitHub\PhD\magnetic-field-stabilization\data-analysis\Ramsey-data-241118\Export'
 
 file = os.path.join(location, 'RamseyAv_Points.txt')
 time, popMean, popStd = np.genfromtxt(file, delimiter='\t', 
@@ -48,7 +49,7 @@ time = time + 26e-6*4/(np.pi)
 # Parameters
 C = dampedContrast(time,*poptMaxPoints) - 0.5         # contrast decay given by B field inhomogeneities
 d0 = poptRamsey[2]*(2*pi)       # middle value detuning d                     
-sigma = 50 * 2*pi                     # Standard deviation of Gaussian noise
+sigma = 200 * 2*pi                     # Standard deviation of Gaussian noise
 num_samples = 10          # Number of samples for Monte Carlo simulation
 
 
